@@ -19,7 +19,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private ItemsMapper itemsMapper;
-	
+
 	//查询商品列表
 	public List<Items> selectItemsList(){
 		return itemsMapper.selectByExampleWithBLOBs(null);

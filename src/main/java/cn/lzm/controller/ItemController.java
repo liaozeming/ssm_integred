@@ -22,25 +22,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 商品管理
- * 
- * @author lx
  *
  */
 @Controller
 public class ItemController {
-
 	@Autowired
 	private ItemService itemService;
-	//入门程序 第一   包类 + 类包 + 方法名
-	@RequestMapping(value = "/item/itemlist.action")
+
+	@RequestMapping("/showitem.action")
 	public ModelAndView itemList(){
 		//从Mysql中查询
 		List<Items> list = itemService.selectItemsList();
-		
+
 		ModelAndView mav = new ModelAndView();
 		//数据
 		mav.addObject("itemList", list);
-		mav.setViewName("itemList");
+		mav.setViewName("admin/login");
 		return mav;
 	}
 

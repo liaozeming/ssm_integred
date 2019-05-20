@@ -9,8 +9,10 @@
        http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-	<!-- 扫描@Controler  @Service   -->
-	<context:component-scan base-package="cn.lzm"/>
+
+    <!-- 扫描@Controler  @Service   -->
+    <context:component-scan base-package="cn.lzm.controller"/>
+
         <!-- 处理器映射器 -->
 <!--         <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/> -->
         <!-- 处理器适配器 -->
@@ -47,7 +49,7 @@
 
         <!-- 视图解释器 去掉前后缀 -->
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        	<property name="prefix" value="/WEB-INF/jsp/"/>
+        	<property name="prefix" value="/WEB-INF/"/>
         	<property name="suffix" value=".jsp"/>
         </bean>
         
