@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
 <form id="loginForm"	action="${pageContext.request.contextPath }/login.action" method="post">
 <div class="page-wrapper flex-row align-items-center">
     <div class="container">
@@ -37,6 +38,8 @@
                             <input type="password" class="form-control" name="password" value="">
                         </div>
 
+                             ${meg}
+
                         <div class="custom-control custom-checkbox mt-4">
                             <input type="checkbox" class="custom-control-input" id="login">
                             <label class="custom-control-label" for="login">Check this custom checkbox</label>
@@ -49,9 +52,11 @@
                             <div class="col-6">
                                 <button type="submit" class="btn btn-primary px-5">Login</button>
                             </div>
-
                             <div class="col-6">
-                                <a href="#" class="btn btn-link">Forgot password?</a>
+                                <a href="/Toregister.action" class="btn btn-link">注册新用户</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="${pageContext.request.contextPath }/loginPage.action" class="btn btn-link">忘记密码</a>
                             </div>
                         </div>
                     </div>

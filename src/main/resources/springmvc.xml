@@ -37,13 +37,13 @@
         </bean>
 
 
-		<!--&lt;!&ndash; SPringmvc的拦截器 &ndash;&gt;-->
+		<!--&lt;!&ndash;&lt;!&ndash; SPringmvc的拦截器 &ndash;&gt;&ndash;&gt;-->
 		<!--<mvc:interceptors>-->
 			<!--&lt;!&ndash; 多个拦截器 &ndash;&gt;-->
 			<!--<mvc:interceptor>-->
 				<!--<mvc:mapping path="/**"/>-->
 				<!--&lt;!&ndash; 自定义的拦截器类 &ndash;&gt;-->
-				<!--<bean class="main.java.cn.lzm.interceptor.Interceptor1"/>-->
+				<!--<bean class="cn.lzm.interceptor.Interceptor1"/>-->
 			<!--</mvc:interceptor>-->
 		<!--</mvc:interceptors>-->
 

@@ -2,28 +2,30 @@ package cn.lzm.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import  cn.lzm.pojo.User;
+
+import java.util.Arrays;
 
 public class Interceptor1 implements HandlerInterceptor{
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("方法前 1");
-		//判断用户是否登陆  如果没有登陆  重定向到登陆页面   不放行   如果登陆了  就放行了
-		// URL  http://localhost:8080/springmvc-mybatis/login.action
-		//URI /login.action
+		HttpSession session = request.getSession();
 		String requestURI = request.getRequestURI();
-		if(!requestURI.contains("/login")){
-			String username = (String) request.getSession().getAttribute("USER_SESSION");
-			if(null == username){
-				response.sendRedirect(request.getContextPath() + "/login.action");
+		if(!requestURI.contains("/To_login")){
+			User user = (User) session.getAttribute("user");
+			if (null == user) {
+				response.sendRedirect(request.getContextPath() + "/To_login.action");
 				return false;
 			}
 		}
 		return true;
 	}
+
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
 			throws Exception {
 		// TODO Auto-generated method stub

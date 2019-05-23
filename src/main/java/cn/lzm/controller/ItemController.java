@@ -29,7 +29,7 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 
-	@RequestMapping("/showitem.action")
+	@RequestMapping("/loginPage.action")
 	public ModelAndView itemList(){
 		//从Mysql中查询
 		List<Items> list = itemService.selectItemsList();
@@ -37,7 +37,7 @@ public class ItemController {
 		ModelAndView mav = new ModelAndView();
 		//数据
 		mav.addObject("itemList", list);
-		mav.setViewName("admin/login");
+		mav.setViewName("index");
 		return mav;
 	}
 
