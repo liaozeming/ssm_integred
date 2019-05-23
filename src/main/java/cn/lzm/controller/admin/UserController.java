@@ -1,6 +1,8 @@
 package cn.lzm.controller.admin;
 
 import cn.lzm.mapper.UserMapper;
+import cn.lzm.pojo.Items;
+import cn.lzm.service.ItemService;
 import cn.lzm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,9 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ItemService itemService;
 
 
     //
@@ -100,5 +105,20 @@ public class UserController {
         userService.DeleteUser(userService.FindUserByID(id));
         return "redirect:/UserManager.action";
     }
+
+    //一对一查询
+    @RequestMapping("/test.action")
+    public  String  test(Model model)
+    {
+        List<Items> list=itemService.queryItemsWithUser();
+        for (Items items:list)
+        {
+            System.out.print(items);
+        }
+        model.addAttribute("list",list);
+        return "/test";
+
+    }
+
 
 }

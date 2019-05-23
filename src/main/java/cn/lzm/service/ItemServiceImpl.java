@@ -32,4 +32,10 @@ public class ItemServiceImpl implements ItemService {
 		items.setCreatetime(new Date());
 		itemsMapper.updateByPrimaryKeyWithBLOBs(items);
 	}
+
+	@Override
+	public List<Items> queryItemsWithUser() {
+	 List<Items> list=itemsMapper.queryItemUserMap();
+		return  list;
+	}
 }

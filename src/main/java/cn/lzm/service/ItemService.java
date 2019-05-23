@@ -17,4 +17,7 @@ public interface ItemService {
 	//修改
 	public void updateItemsById(Items items);
 
+
+	public List<Items> queryItemsWithUser();
+
 }
