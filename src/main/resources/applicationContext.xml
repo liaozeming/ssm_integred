@@ -33,8 +33,9 @@
         <property name="dataSource" ref="dataSource"/>
 		<!-- 指定扫描包，会把包内所有的类都设置别名，别名的名称就是类名，大小写不敏感 -->
         <!-- 核心配置文件的位置 -->
-        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+        <!--<property name="configLocation" value="classpath:sqlMapConfig.xml"/>-->
 
+		<property name="typeAliasesPackage" value="cn.lzm.pojo"/>
 		<!-- 扫描sql配置文件:mapper需要的xml文件 -->
 		<property name="mapperLocations" value="classpath:cn/lzm/mapper/*.xml"/>
 	</bean>

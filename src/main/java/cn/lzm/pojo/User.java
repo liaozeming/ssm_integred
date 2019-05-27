@@ -1,6 +1,7 @@
 package cn.lzm.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Integer id;
@@ -14,6 +15,17 @@ public class User {
     private String address;
 
     private String password;
+
+    //一对多查询
+    private List<Items> itemsList;
+
+    public List<Items> getItemsList() {
+        return itemsList;
+    }
+
+    public void setItemsList(List<Items> itemsList) {
+        this.itemsList = itemsList;
+    }
 
     public Integer getId() {
         return id;

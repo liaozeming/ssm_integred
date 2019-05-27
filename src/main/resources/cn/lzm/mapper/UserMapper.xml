@@ -9,6 +9,7 @@
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

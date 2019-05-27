@@ -1,7 +1,9 @@
 package cn.lzm.controller.admin;
 
-import cn.lzm.mapper.UserMapper;
+import cn.lzm.pojo.Class;
 import cn.lzm.pojo.Items;
+import cn.lzm.pojo.Student;
+import cn.lzm.service.ClassService;
 import cn.lzm.service.ItemService;
 import cn.lzm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.lzm.pojo.User;
 import org.springframework.web.bind.annotation.RequestParam;
+import sun.rmi.runtime.Log;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -27,6 +30,9 @@ public class UserController {
 
     @Autowired
     private ItemService itemService;
+
+    @Autowired
+    private ClassService classService;
 
 
     //
@@ -116,9 +122,27 @@ public class UserController {
             System.out.print(items);
         }
         model.addAttribute("list",list);
-        return "/test";
-
+        return "/test1";
     }
+
+    //一对多查询
+    @RequestMapping("/testManytoOne.action")
+    public String testMany_toOne(Model model)
+    {
+        List<Class> classList = classService.findAllClass();
+
+        model.addAttribute("list",classList);
+        for (Class c:classList)
+        {
+                System.out.print(c.getStudentList());
+        }
+        return "/test";
+    }
+
+
+
+
+
 
 
 }

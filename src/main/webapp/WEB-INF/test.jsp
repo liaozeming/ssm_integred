@@ -7,13 +7,14 @@
 </head>
 <body>
 HelloWord
-<c:forEach items="${list}" var="item" varStatus="s">
+<c:forEach items="${list}" var="student" varStatus="s">
     <tr>
-        <td><input   value="${item.user.username}"></td>
-        <td><input   value="${item.name}"></td>
-        <td><input   value="${item.user.address }"></td>
-        <td><input  value="${item.user.birthday }"></td>
-        <td><input  value="${item.user.password}"></td>
+        <%--<td><input   value="${item.user.username}"></td>--%>
+        <%--<td><input   value="${item.name}"></td>--%>
+        <%--<td><input   value="${item.user.address }"></td>--%>
+        <%--<td><input  value="${item.user.birthday }"></td>--%>
+        <%--<td><input  value="${item.user.password}"></td>--%>
+            <td><input value="${student.classname}"> </td>
     </tr>
 </c:forEach>
 </body>
